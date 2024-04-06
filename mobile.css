@@ -1,0 +1,359 @@
+@font-face {
+    font-family: "Righteous";
+    src: url(./fonts/Righteous.ttf);
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url(./fonts/Quicksand.ttf);
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(./fonts/Roboto.ttf);
+}
+
+@font-face {
+    font-family: "Sansation";
+    src: url(./fonts/Sansation.ttf);
+}
+
+@font-face {
+    font-family: "AbeeZee";
+    src: url(./fonts/AbeeZee.ttf);
+}
+
+:root {
+    --body-bg: #0E040A;
+    --decoration-block-bg: #6d6d6d23;
+    --highlight-color: #EF548C;
+    --highlight-bg-color: #ED3A7B;
+    --logo-color: #FADBE6;
+    --heading-font: "Righteous";
+    --button-font: "Quicksand";
+    --explaination-font: "ABeeZee";
+    --code-font: "Sansation";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    color: white;
+    background: var(--body-bg);
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: var(--body-font);
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    /* justify-content: space-between; */
+    padding: 10px 12px;
+}
+
+nav div#logo {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.3em;
+    font-family: var(--heading-font);
+    gap: 10px;
+    color: var(--logo-color);
+    align-items: center;
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+nav div#logo img {
+    height: 1.5em;
+}
+
+nav div#links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: right; */
+    float: right;
+    position: fixed;
+    right: -45%;
+    top: 0;
+    gap: 30px;
+    background: #74525e50;
+    backdrop-filter: blur(5px);
+    width: 45%;
+    height: 100vh;
+    transition: 450ms;
+    z-index: 3;
+}
+
+nav div#links button {
+    position: absolute;
+    float: right;
+    right: 27px;
+    top: 12px;
+}
+
+nav div#links a {
+    text-decoration: none;
+    color: white;
+    font-family: var(--button-font);
+    font-weight: bold;
+    font-size: 12px;
+    transition: 350ms;
+    position: relative;
+    top: 75px;
+    padding: 10px;
+    z-index: 1;
+}
+
+nav button {
+    padding: 12px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    transition: 450ms;
+    position: absolute;
+    float: right;
+    right: 25px;
+}
+
+section {
+    transition: opacity 450ms;
+}
+
+span.code {
+    font-family: var(--code-font);
+}
+
+span.highlight {
+    color: var(--highlight-color);
+}
+
+section#hero {
+    position: relative;
+    left: 50%;
+    top: 200px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: calc(100% - 40px);
+    z-index: 2;
+}
+
+section#hero div#heading {
+    font-family: var(--heading-font);
+    font-size: 1.6em;
+    font-weight: lighter;
+    font-style: normal;
+    line-height: 40px;
+    text-align: center;
+}
+
+section#hero div#intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+}
+
+section#hero div#intro p {
+    font-size: 13px;
+    line-height: 23px;
+    font-family: var(--explaination-font);
+    text-align: center;
+}
+
+section#hero div#intro div#aboutbtn a {
+    padding: 10px 20px;
+    color: #fff;
+    background: var(--highlight-bg-color);
+    font-family: var(--button-font);
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    left: 50%;
+    display: inline-block;
+    left: calc(50% - 5px);
+    transform: translateX(-50%);
+}
+
+section#hero div#intro div#aboutbtn img {
+    position: relative;
+    top: 60px;
+    left: 10px;
+}
+
+section#bg {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    top: 58%;
+    left: 0;
+    transform: translateY(-50%);
+    gap: 50px;
+    z-index: 1;
+    overflow: hidden;
+    z-index: 1;
+
+}
+
+div.container {
+    position: absolute;
+    top: 125px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div.container img[class|=profile-img] {
+    /* position: relative;
+    top: calc(50%);
+    transform: translateY(-40%);
+    left: -30%;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    box-shadow: 26px 26px 0px #0E040A; */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: #eee;
+}
+
+div.container img:not(.profile-img-5) {
+    display: none;
+}
+
+div#loading-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: var(--body-bg);
+    z-index: 10001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+div#loading {
+    position: absolute;
+    z-index: 10001;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 40px;
+    border: 1px solid;
+    border-image: linear-gradient(to left, var(--highlight-color) 1%, var(--body-bg) 100%) 1;
+    border-radius: 40px;
+    padding: 15px 30px;
+}
+
+div#loading div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+div#loading div#waves div {
+    width: .1em;
+    height: 100px;
+    background: linear-gradient(to bottom, var(--highlight-color) 60%, #f2b1cd);
+    margin: 5px;
+    animation: wave 1s linear infinite;
+    border-radius: 10px;
+    /* position: relative; */
+}
+
+div#loading div#waves div#wave2 {
+    animation-delay: 0.1s;
+}
+
+div#loading div#waves div#wave3 {
+    animation-delay: 0.2s;
+}
+
+div#loading div#waves div#wave4 {
+    animation-delay: 0.3s;
+}
+
+div#loading div#waves div#wave5 {
+    animation-delay: 0.4s;
+}
+
+div#loading div#waves div#wave6 {
+    animation-delay: 0.5s;
+}
+
+div#loading div#waves div#wave7 {
+    animation-delay: 0.6s;
+}
+
+div#loading div#waves div#wave8 {
+    animation-delay: 0.7s;
+}
+
+div#loading div#waves div#wave9 {
+    animation-delay: 0.8s;
+}
+
+div#loading div#waves div#wave10 {
+    animation-delay: 0.9s;
+}
+
+@keyframes wave {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+div#bg-circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+div#bg-circles div {
+    position: absolute;
+    top: -170px;
+    left: -170px;
+    height: 300px;
+    width: 300px;
+    background: rgb(97, 19, 48);
+    border-radius: 50%;
+    filter: blur(125px);
+}
+
+div#bg-circles div#c2 {
+    top: 635px;
+    left: calc(60%);
+    background: rgb(97, 19, 48);
+}
