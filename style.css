@@ -214,20 +214,19 @@ section#my-skills div#container {
     flex-flow: wrap;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    left: calc(50%);
+    align-items: center;
+    left: calc(50% - 50px);
     gap: 40px 70px;
     transform: translate(-50%, 0);
-    /* overflow-x: scroll; */
-    width: 85%;
-    height: 300px;
+    width: fit-content;
+    height: 400px;
     padding: 24px 24px 10px 40px;
 }
 
 section#my-skills div#container::before {
     content: "";
     position: absolute;
-    left: 5px;
+    left: 6px;
     width: 1px;
     height: 95%;
     background-color: #8e6d78;
@@ -240,9 +239,9 @@ section#my-skills div#container div.skill {
     gap: 8px;
     align-items: flex-start;
     font-family: Abeezee, Quicksand, Arial, Helvetica, sans-serif;
-    width: 10em;
+    width: 40em;
     min-width: 200px;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 section#my-skills div#container div.skill::before {
@@ -260,6 +259,7 @@ section#my-skills div#container div.skill::before {
 
 section#my-skills div#container div.skill p.skill-name {
     font-size: 1em;
+    /* border-radius: 30px 0 50px 30px; */
 }
 
 section#my-skills div#container div.skill div.progress {
@@ -781,7 +781,8 @@ ul.container li::before {
 
     section#services,
     section#designs,
-    section#projects {
+    section#projects,
+    section#my-skills {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -1004,7 +1005,8 @@ ul.container li::before {
 
     section#services div#container,
     section#designs div#container,
-    section#projects div#container {
+    section#projects div#container,
+    section#my-skills div#container {
         position: relative;
         transform: none;
         left: auto;
@@ -1062,28 +1064,31 @@ ul.container li::before {
 
     section#my-skills div#container {
         position: relative;
-        top: calc(150px);
+        top: 50px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         /* left: calc(50%); */
         gap: 40px 70px;
-        /* transform: translate(-50%, 0); */
-        /* overflow-x: scroll; */
+        transform: none;
         width: fit-content;
         height: auto;
         padding: 24px 24px 10px 40px;
-        /* background: #b26f6f; */
     }
 
     section#my-skills div#container::before {
         left: 6px;
     }
 
+    section#my-skills div#container div.skill {
+        width: 16em;
+    }
+
     section#services p#title,
     section#designs p#title,
-    section#projects p#title {
+    section#projects p#title,
+    section#my-skills p#title {
         font-family: var(--heading-font);
         font-size: 50px;
         text-shadow: 0px 0px 33px rgba(255, 255, 255, 0.37);
