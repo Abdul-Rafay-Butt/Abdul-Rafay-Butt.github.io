@@ -133,6 +133,10 @@ nav div#links a {
     transition: 350ms;
 }
 
+nav div#links a:is(:nth-child(4), :nth-child(5)) {
+    display: none;
+}
+
 nav div#links a:hover {
     background: var(--highlight-bg-color);
 }
@@ -244,8 +248,8 @@ section#my-skills div#container {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    left: calc(50% - 50px);
-    gap: 40px 70px;
+    left: calc(50% - 80px);
+    gap: 40px 160px;
     transform: translate(-50%, 0);
     width: fit-content;
     height: 400px;
@@ -270,7 +274,7 @@ section#my-skills div#container div.skill {
     gap: 8px;
     align-items: flex-start;
     font-family: Abeezee, Quicksand, Arial, Helvetica, sans-serif;
-    width: 40em;
+    width: 26em;
     min-width: 200px;
     max-width: 500px;
     opacity: 0;
@@ -330,6 +334,8 @@ section#education {
     top: 200%;
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 section#education img.sectionEnd {
@@ -348,19 +354,30 @@ section#education p#title {
     left: 95px;
 }
 
+section#education div:is(.education-container, .experience-container) {
+    width: 100%;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: appear cubic-bezier(0.68, -0.55, 0.55, 1.36) forwards;
+    transform-origin: center;
+    animation-duration: .9s;
+    animation-delay: calc(var(--i) * .04s);
+    animation-iteration-count: 1;
+}
+
 section#education div#container {
     position: relative;
-    top: calc(150px);
+    top: calc(135px);
     display: flex;
     flex-flow: wrap;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    left: calc(50% - 50px);
+    align-items: flex-start;
+    left: 150px;
     gap: 40px 70px;
-    transform: translate(-50%, 0);
+    /* transform: translate(-50%, 0); */
     width: fit-content;
-    height: 400px;
+    /* height: 400px; */
     padding: 24px 24px 10px 40px;
 }
 
@@ -373,6 +390,72 @@ section#education div#container::before {
     opacity: 0;
     background-color: #8e6d78;
     animation: showLine linear .3s 1 1s forwards;
+}
+
+section#education div#container div:is(.education, .experience) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    font-family: abeezee, quicksand, Arial, Helvetica, sans-serif;
+    font-size: .9em;
+}
+
+div:is(.education, .experience) p.date {
+    border-radius: 30px 0 60px 30px;
+    background-color: #68434f;
+    width: fit-content;
+    padding: 8px 28px 8px 14px;
+    font-family: Sansation, Arial, Helvetica, sans-serif;
+}
+
+div:is(.education.current, .experience.current) p.date {
+    background: var(--highlight-color);
+}
+
+div:is(.course, .job) {
+    background: #24151e;
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: Quicksand, Arial, Helvetica, sans-serif;
+}
+
+p:is(.course-name, .role-name) {
+    font-size: 1.3em;
+}
+
+p.institution {
+    font-size: .89em;
+    position: relative;
+    top: -4.5px;
+    color: #ff89b3;
+}
+
+p.description {
+    width: 300px;
+    font-size: .96em;
+    line-height: 140%;
+    color: #ecc7d2;
+}
+
+div:is(.education, .experience)::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgb(164, 164, 164);
+    border-radius: 50%;
+    border: 3.4px solid #0E040A;
+    top: 5px;
+    left: -42px;
+}
+
+div:is(.education, .experience).current::before {
+    background: var(--highlight-color);
+    box-shadow: 0 0 0 1.4px var(--highlight-color);
 }
 
 /* section#education div#container {
@@ -574,7 +657,7 @@ div#bg-circles div#c2 {
 
 section#services {
     position: absolute;
-    top: 300%;
+    top: 320%;
     height: 100%;
     width: 100%;
 }
@@ -640,7 +723,7 @@ section#services div#container div.card:hover {
 
 section#designs {
     position: absolute;
-    top: 400%;
+    top: 410%;
     height: 100%;
     width: 100%;
 }
@@ -692,7 +775,7 @@ section#designs div#container img {
 
 section#projects {
     position: absolute;
-    top: 500%;
+    top: 510%;
     height: 100%;
     width: 100%;
 }
@@ -975,6 +1058,7 @@ ul.container li::before {
         top: 75px;
         padding: 10px;
         z-index: 1;
+        display: block !important;
     }
 
     nav div#links a svg {

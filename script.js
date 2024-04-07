@@ -190,3 +190,43 @@ skills.forEach( ( [ skill, value ], i ) => {
     </div>
   `;
 } );
+
+const institutions = [
+  [ "University of Central Punjab", "BSCS (Bachelors in Computer Science)", "2024 - present", "Currently Studying BSCS (Bachelors in Computer Science) at UCP Lahore.", true ],
+  [ "Punjab Group of Colleges Lahore", "Intermediate in Computer Science", "2021 - 2023", "I completed my ICS (Intermediate in Computer Science) at Punjab College Lahore.", false ],
+];
+
+const myEducationContainer = document.querySelector( "section#education > div.education-container > div#container" );
+
+institutions.forEach( ( [ institution, education, time, desc, current ], i ) => {
+  myEducationContainer.innerHTML += `
+    <div class="education ${ current && 'current' }" style='--i: ${ i }'>
+      <p class="date">${ time }</p>
+      <div class="course">
+        <p class="course-name">${ education }</p>
+        <p class="institution">${ institution }</p>
+        <p class="description">${ desc }</p>
+      </div>
+    </div>
+  `;
+} );
+
+const experiences = [
+  [ "AIONS", "Full-Stack Web Developer", "2023 Sep - 2023 Dec (Internship)", "Completed My Internship at AIONS", true ],
+
+];
+
+const myEexperienceContainer = document.querySelector( "section#education > div.experience-container > div#container" );
+
+experiences.forEach( ( [ institution, role, time, desc, current ], i ) => {
+  myEexperienceContainer.innerHTML += `
+    <div class="experience ${ current && 'current' }" style='--i: ${ i + 1 }'>
+      <p class="date">${ time }</p>
+      <div class="job">
+        <p class="job-role">${ role }</p>
+        <p class="institution">${ institution }</p>
+        <p class="description">${ desc }</p>
+      </div>
+    </div>
+  `;
+} );
