@@ -311,6 +311,8 @@ section#my-skills div#container div.skill div.progress {
     border-radius: 30px;
     padding: 1.2px;
     font-size: .8em;
+    font-weight: 600;
+    font-family: quicksand, arial, helvetica, sans-serif;
 }
 
 section#my-skills div#container div.skill div.progress div.progress-bar {
@@ -845,6 +847,10 @@ ul.container li {
     animation-iteration-count: 1;
 }
 
+ul.container li span {
+    font-weight: 600;
+}
+
 ul.container li::before {
     content: "";
     position: absolute;
@@ -867,10 +873,15 @@ ul.container li::before {
         overflow-x: hidden;
     }
 
+    div.social-networks {
+        display: none;
+    }
+
     section#services,
     section#designs,
     section#projects,
-    section#my-skills {
+    section#my-skills,
+    section#education {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -964,6 +975,11 @@ ul.container li::before {
         top: 75px;
         padding: 10px;
         z-index: 1;
+    }
+
+    nav div#links a svg {
+        width: 23px;
+        height: 23px;
     }
 
     nav > button {
@@ -1094,7 +1110,8 @@ ul.container li::before {
     section#services div#container,
     section#designs div#container,
     section#projects div#container,
-    section#my-skills div#container {
+    section#my-skills div#container,
+    section#education div#container {
         position: relative;
         transform: none;
         left: auto;
@@ -1116,7 +1133,7 @@ ul.container li::before {
     section#designs div#container {
         display: flex;
         flex-direction: column;
-        width: calc(100% - 60px);
+        width: calc(100% - 70px);
         justify-content: center;
         align-items: center;
     }
@@ -1176,7 +1193,8 @@ ul.container li::before {
     section#services p#title,
     section#designs p#title,
     section#projects p#title,
-    section#my-skills p#title {
+    section#my-skills p#title,
+    section#education p#title {
         font-family: var(--heading-font);
         font-size: 50px;
         text-shadow: 0px 0px 33px rgba(255, 255, 255, 0.37);
