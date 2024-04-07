@@ -148,21 +148,21 @@ section#hero {
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
 }
 
 section#hero div#heading {
     font-family: var(--heading-font);
-    font-size: 3.5em;
-    width: 600px;
+    font-size: 2.76em;
+    width: calc(50vw - 50px);
     font-weight: lighter;
     font-style: normal;
-    line-height: 70px;
+    line-height: 55px;
 }
 
 section#hero div#intro p {
     width: 350px;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 23px;
     font-family: var(--explaination-font);
 }
@@ -183,6 +183,118 @@ section#hero div#intro div#aboutbtn img {
     left: -5px;
     user-select: none;
 }
+
+section#my-skills {
+    position: absolute;
+    top: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+section#my-skills img.sectionEnd {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+}
+
+section#my-skills p#title {
+    font-family: var(--heading-font);
+    font-size: 50px;
+    text-shadow: 0px 0px 33px rgba(255, 255, 255, 0.37);
+    position: relative;
+    top: 80px;
+    left: 95px;
+}
+
+section#my-skills div#container {
+    position: relative;
+    top: calc(150px);
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    left: calc(50%);
+    gap: 40px 70px;
+    transform: translate(-50%, 0);
+    /* overflow-x: scroll; */
+    width: 85%;
+    height: 300px;
+    padding: 24px 24px 10px 40px;
+}
+
+section#my-skills div#container::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    width: 1px;
+    height: 95%;
+    background-color: #8e6d78;
+}
+
+section#my-skills div#container div.skill {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    font-family: Abeezee, Quicksand, Arial, Helvetica, sans-serif;
+    width: 10em;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+section#my-skills div#container div.skill::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 4px solid #0E040A;
+    background-color: var(--highlight-bg-color);
+    box-shadow: 0 0 0 1px var(--highlight-bg-color);
+    left: -41px;
+    top: 5px;
+}
+
+section#my-skills div#container div.skill p.skill-name {
+    font-size: 1em;
+}
+
+section#my-skills div#container div.skill div.progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 20px;
+    border: 1.5px solid var(--highlight-bg-color);
+    border-radius: 30px;
+    padding: 1.2px;
+    font-size: .8em;
+}
+
+section#my-skills div#container div.skill div.progress div.progress-bar {
+    height: calc(100% - 2.5px);
+    width: calc((var(--w) * 1%) - 2.5px);
+    background: var(--highlight-bg-color);
+    position: absolute;
+    left: 1.5px;
+    z-index: -1;
+    border-radius: 30px;
+}
+
+/* section#education div#container {
+    position: absolute;
+    top: calc(50% + 20px);
+    display: flex;
+    flex-direction: row;
+    left: 50%;
+    gap: 100px;
+    transform: translate(-50%, -50%);
+
+} */
 
 section#bg {
     position: absolute;
@@ -372,7 +484,7 @@ div#bg-circles div#c2 {
 
 section#services {
     position: absolute;
-    top: 100%;
+    top: 220%;
     height: 100%;
     width: 100%;
 }
@@ -438,7 +550,7 @@ section#services div#container div.card:hover {
 
 section#designs {
     position: absolute;
-    top: 200%;
+    top: 300%;
     height: 100%;
     width: 100%;
 }
@@ -490,7 +602,7 @@ section#designs div#container img {
 
 section#projects {
     position: absolute;
-    top: 300%;
+    top: 400%;
     height: 100%;
     width: 100%;
 }
@@ -589,6 +701,74 @@ section#sections {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+div.about {
+    position: relative;
+    top: 33px;
+}
+
+div.about > ul {
+    list-style: none;
+    padding-left: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+ul.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 9px;
+    margin: auto;
+    width: 1px;
+    height: 95%;
+    background-color: #8e6d78;
+    z-index: -1;
+    opacity: 0;
+    animation: showLine .3s forwards 1s 1 linear;
+}
+
+@keyframes showLine {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+ul.container li {
+    position: relative;
+    display: block;
+    font-family: Abeezee, Quicksand, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    z-index: 10;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: appear cubic-bezier(0.68, -0.55, 0.55, 1.36) forwards;
+    transform-origin: center;
+    animation-duration: .9s;
+    animation-delay: calc(var(--i) * .04s);
+    animation-iteration-count: 1;
+}
+
+ul.container li::before {
+    content: "";
+    position: absolute;
+    left: -26px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10040B;
+    mix-blend-mode: difference;
+    border: 2px solid var(--highlight-bg-color);
 }
 
 @media screen and (max-width: 768px) {
@@ -785,7 +965,7 @@ section#sections {
 
     section#hero div#intro p {
         width: 90vw;
-        font-size: 12px;
+        font-size: 13px;
         line-height: 23px;
         text-align: center;
         font-family: var(--explaination-font);
@@ -880,6 +1060,27 @@ section#sections {
         /* top: 140px; */
     }
 
+    section#my-skills div#container {
+        position: relative;
+        top: calc(150px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* left: calc(50%); */
+        gap: 40px 70px;
+        /* transform: translate(-50%, 0); */
+        /* overflow-x: scroll; */
+        width: fit-content;
+        height: auto;
+        padding: 24px 24px 10px 40px;
+        /* background: #b26f6f; */
+    }
+
+    section#my-skills div#container::before {
+        left: 6px;
+    }
+
     section#services p#title,
     section#designs p#title,
     section#projects p#title {
@@ -900,4 +1101,16 @@ section#sections {
         display: none;
     }
 
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

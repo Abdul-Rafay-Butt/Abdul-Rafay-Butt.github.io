@@ -166,3 +166,27 @@ projects.forEach( ( p, i ) => {
 
   ProjectSection.innerHTML += html;
 } );
+
+const skills = [
+  [ "HTML + CSS", 100 ],
+  [ "JavaScript", 100 ],
+  [ "React Js", 95 ],
+  [ "Next Js", 95 ],
+  [ "Node Js", 95 ],
+  [ "Express Js", 85 ],
+  [ "Figma", 80 ]
+];
+
+const mySkillsContainer = document.querySelector( "section#my-skills > div#container" );
+
+skills.forEach( ( [ skill, value ], i ) => {
+  mySkillsContainer.innerHTML += `
+    <div class="skill" style='--i: ${ i }'>
+      <p class="skill-name">${ skill }</p>
+      <div class='progress'>
+        <p class="progress-value">${ value }%</p>
+        <div class='progress-bar' style='--w: ${ value }'></div>
+      </div>
+    </div>
+  `;
+} );

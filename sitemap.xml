@@ -7,22 +7,16 @@
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.rayfolio.me/#services</loc>
+      <loc>https://www.rayfolio.me</loc>
       <lastmod>2024-04-07</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+      <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.rayfolio.me/#projects</loc>
+      <loc>rayfolio.me</loc>
       <lastmod>2024-04-07</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.9</priority>
-   </url>
-   <url>
-      <loc>https://www.rayfolio.me/#designs</loc>
-      <lastmod>2024-04-07</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.9</priority>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
    </url>
    <!-- Add more URLs for individual portfolio projects, blog posts, etc. -->
 </urlset>
