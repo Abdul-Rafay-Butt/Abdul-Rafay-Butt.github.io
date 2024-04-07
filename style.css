@@ -229,7 +229,9 @@ section#my-skills div#container::before {
     left: 6px;
     width: 1px;
     height: 95%;
+    opacity: 0;
     background-color: #8e6d78;
+    animation: showLine linear .3s 1 1s forwards;
 }
 
 section#my-skills div#container div.skill {
@@ -242,6 +244,13 @@ section#my-skills div#container div.skill {
     width: 40em;
     min-width: 200px;
     max-width: 500px;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: appear cubic-bezier(0.68, -0.55, 0.55, 1.36) forwards;
+    transform-origin: center;
+    animation-duration: .9s;
+    animation-delay: calc(var(--i) * .04s);
+    animation-iteration-count: 1;
 }
 
 section#my-skills div#container div.skill::before {
