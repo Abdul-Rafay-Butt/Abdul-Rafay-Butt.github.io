@@ -1,7 +1,7 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
-AllowL /svgs/
+Allow: /svgs/
 Allow: /
 Sitemap: https://rayfolio.me/sitemap.xml
 Sitemap: https://rayfolio.me/sitemap_images.xml
