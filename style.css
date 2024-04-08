@@ -964,7 +964,9 @@ ul.container li::before {
     section#designs,
     section#projects,
     section#my-skills,
-    section#education {
+    section#education,
+    section#education div.education-container,
+    section#education div.experience-container {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -980,7 +982,7 @@ ul.container li::before {
     section#sections {
         position: relative;
         top: 200px;
-        gap: 150px;
+        gap: 170px;
     }
 
     div#bg-circles div {
@@ -1034,9 +1036,9 @@ ul.container li::before {
 
     nav div#links button {
         position: absolute;
-        float: right;
+        /* float: right; */
         right: 27px;
-        top: 12px;
+        top: 20px;
         display: block;
         padding: 12px;
         background: none;
@@ -1272,6 +1274,23 @@ ul.container li::before {
 
     section#my-skills div#container div.skill {
         width: 16em;
+    }
+
+    section#education {
+        gap: 120px;
+    }
+
+    div:is(.education, .experience)::before {
+        left: -1px;
+    }
+
+    div:is(.education, .experience) {
+        width: min-content;
+        padding-left: 40px;
+    }
+
+    div:is(.course, .job) {
+        width: min-content;
     }
 
     section#services p#title,

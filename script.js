@@ -157,14 +157,24 @@ const projects = [
 const ProjectSection = document.querySelector( "section#projects div#container" );
 
 projects.forEach( ( p, i ) => {
-  const html = `
-  <a target="_blank" href=${ p.url } class="project">
+
+  const a = document.createElement( "a" );
+  a.href = p.url;
+  a.target = "_blank";
+  a.className = "project";
+  a.innerHTML = `
     <img src=${ "./designs/" + p.img } alt=${ p.name }></img>
     <p class="project-name">${ p.name }</p>
-  </a>
-  `;
+    `;
 
-  ProjectSection.innerHTML += html;
+  a.onclick = e => e.stopPropagation();
+
+  // const html = `
+  // <a target="_blank" href=${ p.url } class="project">
+  // </a>
+  // `;
+
+  ProjectSection.appendChild( a );
 } );
 
 const skills = [
