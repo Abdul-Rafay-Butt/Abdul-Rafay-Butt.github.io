@@ -37,23 +37,5 @@
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-   <url>
-      <loc>rayfolio.me</loc>
-      <image:image>
-         <image:loc>https://www.rayfolio.me/svgs/metapfplogo.png</image:loc>
-      </image:image>
-      <image:image>
-         <image:loc>https://www.rayfolio.me/svgs/logo.png</image:loc>
-      </image:image>
-      <image:image>
-         <image:loc>https://www.rayfolio.me/svgs/pfp2.png</image:loc>
-      </image:image>
-      <image:image>
-         <image:loc>https://www.rayfolio.me/svgs/pfp.png</image:loc>
-      </image:image>
-      <lastmod>2024-04-07</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>1.0</priority>
-   </url>
    <!-- Add more URLs for individual portfolio projects, blog posts, etc. -->
 </urlset>
