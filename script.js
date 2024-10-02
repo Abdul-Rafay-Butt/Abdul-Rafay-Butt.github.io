@@ -152,6 +152,11 @@ const projects = [
     url: "https://chat.aions.co/",
     img: "rayai.png"
   },
+  {
+    name: "WorldAuto",
+    url: "https://worldauto.site/",
+    img: "worldauto.png"
+  }
 ];
 
 const ProjectSection = document.querySelector( "section#projects div#container" );
@@ -183,8 +188,8 @@ const skills = [
   [ "React Js", 95 ],
   [ "Next Js", 95 ],
   [ "Node Js", 95 ],
-  [ "Express Js", 85 ],
-  [ "Figma", 80 ]
+  [ "Express Js", 95 ],
+  [ "Figma (Designing)", 95 ]
 ];
 
 const mySkillsContainer = document.querySelector( "section#my-skills > div#container" );
