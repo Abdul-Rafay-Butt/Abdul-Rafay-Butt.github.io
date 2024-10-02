@@ -109,7 +109,7 @@ document.querySelectorAll( "img[class|=profile-img]" ).forEach( element => {
 } );
 
 
-const images = [ 1, 2, 3, 4, 5, 6, 7 ];
+const images = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ];
 
 for ( const img of images ) {
   let img_ = new Image();
